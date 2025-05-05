@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>Persistence</ID>
+  <OriginalElement>JavaeeElement:/7428a7b2/entityManagerFactory/marketplace.main/jpa/JPA/PersistenceModel</OriginalElement>
+  <nodes>
+    <node x="-96.0" y="1404.5">UserCart#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/UserCart.java</node>
+    <node x="123.0" y="1212.5">AbstractAuditable#jar://C:/Users/frosh/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-jpa/3.4.5/40000309bebdc0e4e284211701f039eb5b1fb1a6/spring-data-jpa-3.4.5.jar!/org/springframework/data/jpa/domain/AbstractAuditable.class</node>
+    <node x="479.5" y="232.5">Role#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/Role.java</node>
+    <node x="200.5" y="220.5">UserOrder#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/UserOrder.java</node>
+    <node x="476.5" y="-127.5">Permission#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/Permission.java</node>
+    <node x="-79.5" y="232.5">UserLike#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/UserLike.java</node>
+    <node x="-91.5" y="24.5">LikeProducts#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/LikeProducts.java</node>
+    <node x="-82.5" y="428.5">User#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/User.java</node>
+    <node x="123.0" y="944.5">AbstractPersistable#jar://C:/Users/frosh/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-jpa/3.4.5/40000309bebdc0e4e284211701f039eb5b1fb1a6/spring-data-jpa-3.4.5.jar!/org/springframework/data/jpa/domain/AbstractPersistable.class</node>
+    <node x="182.0" y="-115.5">OrderProducts#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/OrderProducts.java</node>
+    <node x="199.5" y="488.5">Category#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/Category.java</node>
+    <node x="-119.5" y="1200.5">CartProduct#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/CartProduct.java</node>
+    <node x="-80.5" y="848.5">Product#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/Product.java</node>
+    <node x="283.0" y="-11.5">Address#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/Address.java</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="UserLike#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/UserLike.java" target="LikeProducts#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/LikeProducts.java" relationship="RELATION">
+      <point x="0.0" y="-43.5" />
+      <point x="17.0" y="176.0" />
+      <point x="-23.0" y="176.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="User#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/User.java" target="UserLike#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/UserLike.java" relationship="RELATION">
+      <point x="0.0" y="127.5" />
+      <point x="37.0" y="716.0" />
+      <point x="177.0" y="716.0" />
+      <point x="177.0" y="356.0" />
+      <point x="137.0" y="356.0" />
+      <point x="137.0" y="196.0" />
+      <point x="17.0" y="196.0" />
+      <point x="0.0" y="-43.5" />
+    </edge>
+    <edge source="UserOrder#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/UserOrder.java" target="Address#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/Address.java" relationship="RELATION">
+      <point x="0.0" y="-55.5" />
+      <point x="297.0" y="156.0" />
+      <point x="357.0" y="156.0" />
+      <point x="0.0" y="67.5" />
+    </edge>
+    <edge source="Product#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/Product.java" target="User#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/User.java" relationship="RELATION">
+      <point x="0.0" y="-127.5" />
+      <point x="-3.0" y="776.0" />
+      <point x="37.0" y="776.0" />
+      <point x="0.0" y="127.5" />
+    </edge>
+    <edge source="OrderProducts#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/OrderProducts.java" target="Product#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/Product.java" relationship="RELATION">
+      <point x="0.0" y="31.5" />
+      <point x="257.0" y="156.0" />
+      <point x="-103.0" y="156.0" />
+      <point x="-103.0" y="796.0" />
+      <point x="-3.0" y="796.0" />
+      <point x="0.0" y="-127.5" />
+    </edge>
+    <edge source="Role#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/Role.java" target="Permission#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/Permission.java" relationship="RELATION">
+      <point x="0.0" y="-43.5" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="User#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/User.java" target="Address#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/Address.java" relationship="RELATION">
+      <point x="0.0" y="127.5" />
+      <point x="37.0" y="716.0" />
+      <point x="177.0" y="716.0" />
+      <point x="177.0" y="356.0" />
+      <point x="417.0" y="356.0" />
+      <point x="417.0" y="196.0" />
+      <point x="357.0" y="196.0" />
+      <point x="0.0" y="67.5" />
+    </edge>
+    <edge source="Product#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/Product.java" target="Category#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/Category.java" relationship="RELATION">
+      <point x="0.0" y="-127.5" />
+      <point x="-3.0" y="776.0" />
+      <point x="37.0" y="776.0" />
+      <point x="37.0" y="756.0" />
+      <point x="277.0" y="756.0" />
+      <point x="0.0" y="67.5" />
+    </edge>
+    <edge source="CartProduct#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/CartProduct.java" target="Product#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/Product.java" relationship="RELATION">
+      <point x="0.0" y="-55.5" />
+      <point x="-23.0" y="1156.0" />
+      <point x="-103.0" y="1156.0" />
+      <point x="-103.0" y="816.0" />
+      <point x="-3.0" y="816.0" />
+      <point x="0.0" y="-127.5" />
+    </edge>
+    <edge source="User#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/User.java" target="Role#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/Role.java" relationship="RELATION">
+      <point x="0.0" y="127.5" />
+      <point x="37.0" y="716.0" />
+      <point x="177.0" y="716.0" />
+      <point x="177.0" y="356.0" />
+      <point x="457.0" y="356.0" />
+      <point x="457.0" y="196.0" />
+      <point x="537.0" y="196.0" />
+      <point x="0.0" y="-43.5" />
+    </edge>
+    <edge source="LikeProducts#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/LikeProducts.java" target="Product#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/Product.java" relationship="RELATION">
+      <point x="0.0" y="31.5" />
+      <point x="-23.0" y="136.0" />
+      <point x="-143.0" y="136.0" />
+      <point x="-143.0" y="776.0" />
+      <point x="-103.0" y="776.0" />
+      <point x="-103.0" y="796.0" />
+      <point x="-3.0" y="796.0" />
+      <point x="0.0" y="-127.5" />
+    </edge>
+    <edge source="UserCart#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/UserCart.java" target="CartProduct#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/CartProduct.java" relationship="RELATION">
+      <point x="0.0" y="-31.5" />
+      <point x="-43.0" y="1376.0" />
+      <point x="-143.0" y="1376.0" />
+      <point x="-143.0" y="1176.0" />
+      <point x="-23.0" y="1176.0" />
+      <point x="0.0" y="-55.5" />
+    </edge>
+    <edge source="User#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/User.java" target="UserOrder#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/UserOrder.java" relationship="RELATION">
+      <point x="0.0" y="127.5" />
+      <point x="37.0" y="716.0" />
+      <point x="177.0" y="716.0" />
+      <point x="177.0" y="196.0" />
+      <point x="297.0" y="196.0" />
+      <point x="0.0" y="-55.5" />
+    </edge>
+    <edge source="AbstractAuditable#jar://C:/Users/frosh/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-jpa/3.4.5/40000309bebdc0e4e284211701f039eb5b1fb1a6/spring-data-jpa-3.4.5.jar!/org/springframework/data/jpa/domain/AbstractAuditable.class" target="AbstractPersistable#jar://C:/Users/frosh/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-jpa/3.4.5/40000309bebdc0e4e284211701f039eb5b1fb1a6/spring-data-jpa-3.4.5.jar!/org/springframework/data/jpa/domain/AbstractPersistable.class" relationship="INHERITANCE">
+      <point x="0.0" y="-43.5" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="UserOrder#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/UserOrder.java" target="OrderProducts#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/OrderProducts.java" relationship="RELATION">
+      <point x="0.0" y="-55.5" />
+      <point x="297.0" y="176.0" />
+      <point x="257.0" y="176.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="User#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/User.java" target="UserCart#file://C:/Users/frosh/Desktop/reactspringproj/back/marketplace/src/main/java/org/example/marketplace/model/UserCart.java" relationship="RELATION">
+      <point x="0.0" y="127.5" />
+      <point x="37.0" y="736.0" />
+      <point x="97.0" y="736.0" />
+      <point x="97.0" y="1356.0" />
+      <point x="-43.0" y="1356.0" />
+      <point x="0.0" y="-31.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.5445544554455446" showDependencies="false" x="227.5" y="669.9999999999999" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Embeddables</Category>
+    <Category>Properties</Category>
+    <Category>Superclasses</Category>
+  </Categories>
+</Diagram>
+
