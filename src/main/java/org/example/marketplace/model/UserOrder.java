@@ -16,7 +16,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "user_orders")
+@Table(name = "user_order")
 public class UserOrder {
     @Id
     @GeneratedValue

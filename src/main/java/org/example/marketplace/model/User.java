@@ -1,5 +1,6 @@
 package org.example.marketplace.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -43,19 +44,22 @@ public class User {
     private String lastName;
 
 
-
+    @JsonManagedReference("user-cart")
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, optional = false)
     private UserCart userCart;
 
+    @JsonManagedReference("user-like")
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, optional = false)
     private UserLike userLike;
 
     @OneToMany(mappedBy = "user")
     private Set<UserOrder> userOrders = new HashSet<>();
 
+    @OneToMany(mappedBy = "user")
+    private Set<Address> addresses = new HashSet<>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Address> addresses;
+    @OneToMany(mappedBy = "user")
+    private Set<Review> reviews = new HashSet<>();
 
     @CreationTimestamp
     @Column(updatable = false)
@@ -66,7 +70,7 @@ public class User {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-            name = "user_roles",
+            name = "user_role",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )

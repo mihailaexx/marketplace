@@ -1,5 +1,7 @@
 package org.example.marketplace.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,13 +18,14 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "user_likes")
+@Table(name = "user_like")
 public class UserLike {
     @Id
     @GeneratedValue
     @Column(updatable = false)
     private long id;
 
+    @JsonBackReference("user-like")
     @OneToOne
     @JoinColumn(updatable = false, nullable = false, name = "user_id")
     private User user;

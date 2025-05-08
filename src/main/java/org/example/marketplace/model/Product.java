@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.marketplace.service.GenerateSlug;
 
+import java.util.Set;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -47,6 +49,9 @@ public class Product {
     @ManyToOne
     @JoinColumn(updatable = false, name = "category_id")
     private Category category;
+
+    @OneToMany(mappedBy = "product")
+    private Set<Review> reviews;
 
     @Column(nullable = false, unique = true, length = 150)
     private String slug;

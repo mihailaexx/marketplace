@@ -1,8 +1,11 @@
 package org.example.marketplace.security;
 
-import org.example.marketplace.repository.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.ProviderManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -20,18 +23,24 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/user/**").hasAnyRole("USER", "ADMIN")
-                        .anyRequest().permitAll()
-                )
-                .formLogin(Customizer.withDefaults())
+                .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
+                        .requestMatchers("api/v1/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/api/v1/address/**").hasRole("ADMIN")
+//                        .requestMatchers(HttpMethod.GET, "/api/v1/user", "/api/v1/user/*").hasRole("ADMIN")
+//                        .requestMatchers(HttpMethod.DELETE, "/api/v1/user/*").hasRole("ADMIN")
+                        .anyRequest().permitAll())
+                .httpBasic(Customizer.withDefaults())
                 .build();
     }
 
     @Bean
-    public UserDetailsService userDetailsService(UserRepository repo) {
-        return new CustomUserDetailsService(repo);
+    public AuthenticationManager authManager(UserDetailsService uds, PasswordEncoder encoder) {
+        return new ProviderManager(
+                new DaoAuthenticationProvider() {{
+                    setUserDetailsService(uds);
+                    setPasswordEncoder(encoder);
+                }}
+        );
     }
 
     @Bean

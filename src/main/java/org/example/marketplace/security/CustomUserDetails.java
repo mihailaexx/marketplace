@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @AllArgsConstructor
 public class CustomUserDetails implements UserDetails {
@@ -17,8 +18,12 @@ public class CustomUserDetails implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return user.getRoles().stream()
-                .flatMap(role -> role.getPermissions().stream())
-                .map(p -> new SimpleGrantedAuthority(p.getName()))
+                .flatMap(role -> {
+                    Stream<GrantedAuthority> roleAuth = Stream.of(new SimpleGrantedAuthority(role.getName()));
+                    Stream<GrantedAuthority> permAuths = role.getPermissions().stream()
+                            .map(perm -> new SimpleGrantedAuthority(perm.getName()));
+                    return Stream.concat(roleAuth, permAuths);
+                })
                 .collect(Collectors.toSet());
     }
 
@@ -32,4 +37,8 @@ public class CustomUserDetails implements UserDetails {
     @Override public boolean isAccountNonLocked() {return true;}
     @Override public boolean isCredentialsNonExpired() {return true;}
     @Override public boolean isEnabled() {return true;}
+
+    public User getUser() {
+        return user;
+    }
 }
