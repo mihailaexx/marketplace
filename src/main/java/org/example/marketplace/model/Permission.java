@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -20,4 +22,7 @@ public class Permission {
 
     @Column(updatable = false, unique = true, nullable = false, length = 25)
     private String name;
+
+    @ManyToMany(mappedBy = "permissions")
+    private Set<Role> roles;
 }

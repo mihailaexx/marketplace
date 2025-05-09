@@ -27,7 +27,7 @@ public class UserOrder {
     @JoinColumn(updatable = false, nullable = false, name = "user_id")
     private User user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(updatable = false, nullable = false, name = "address_id")
     private Address address;
 

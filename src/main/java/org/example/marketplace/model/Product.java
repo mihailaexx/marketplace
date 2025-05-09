@@ -24,7 +24,7 @@ public class Product {
     @Column(nullable = false, unique = true, length = 50)
     private String name;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(updatable = false, name = "user_id")
     private User seller;
 
@@ -46,7 +46,7 @@ public class Product {
     @Column(length = 1000)
     private String url;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(updatable = false, name = "category_id")
     private Category category;
 

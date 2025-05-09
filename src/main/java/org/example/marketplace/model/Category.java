@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.marketplace.service.GenerateSlug;
 
+import java.util.Set;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -24,6 +26,9 @@ public class Category {
 
     @Column(length = 500)
     private String description;
+
+    @OneToMany(mappedBy = "category")
+    private Set<Product> products;
 
     @Column(nullable = false, unique = true, length = 150)
     private String slug;

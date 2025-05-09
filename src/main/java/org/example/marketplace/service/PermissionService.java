@@ -1,7 +1,8 @@
 package org.example.marketplace.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.marketplace.model.Role;
+import org.example.marketplace.model.Permission;
+import org.example.marketplace.repository.PermissionRepository;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -12,21 +13,23 @@ import java.util.List;
 @Primary
 public class PermissionService {
 
-    private final RoleService roleService;
+    private final PermissionRepository permissionRepository;
 
-    public List<Role> getAllRoles() {
-        return roleService.getAllRoles();
+    public List<Permission> getAllPermissions() {
+        return permissionRepository.findAll();
     }
 
-    public Role getRoleById(long id) {
-        return roleService.getRoleById(id);
+    public Permission getPermissionById(long id) {
+        return permissionRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Permission not found")
+        );
     }
 
-    public Role saveRole(Role role) {
-        return roleService.saveRole(role);
+    public Permission savePermission(Permission permission) {
+        return permissionRepository.save(permission);
     }
 
-    public void deleteRoleById(long id) {
-        roleService.deleteRoleById(id);
+    public void deletePermissionById(long id) {
+        permissionRepository.deleteById(id);
     }
 }
